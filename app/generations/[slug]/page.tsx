@@ -21,3 +21,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
     </main>
   )
 }
+
+export async function generateStaticParams() {
+  const slugs = await reader.collections.generations.list()
+
+  return slugs.map(slug => ({ slug }))
+}
