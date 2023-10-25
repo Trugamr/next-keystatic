@@ -10,14 +10,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col gap-2 p-6">
+    <main className="flex min-h-screen flex-col items-start gap-2 p-6">
       <Link href="/" className="text-sm hover:underline">
         Back
       </Link>
       <hr />
       <h3>{generation.title}</h3>
       <p className="text-slate-500">{generation.prompt}</p>
-      <Image src={generation.image} alt={generation.prompt} width={448} height={576} />
+      <Image
+        className="bg-pink-100"
+        src={generation.image}
+        alt={generation.prompt}
+        width={448}
+        height={576}
+      />
     </main>
   )
 }
