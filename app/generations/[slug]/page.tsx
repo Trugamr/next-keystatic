@@ -29,8 +29,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 }
 
 // Instead of using a "hack" to include "content" directory in the build we can pre-generate the static paths during build time which will be better in this scenario
-// export async function generateStaticParams() {
-//   const slugs = await reader.collections.generations.list()
+export async function generateStaticParams() {
+  const slugs = await reader.collections.generations.list()
 
-//   return slugs.map(slug => ({ slug }))
-// }
+  return slugs.map(slug => ({ slug }))
+}

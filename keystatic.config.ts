@@ -2,7 +2,11 @@ import { config, fields, collection } from '@keystatic/core'
 
 export default config({
   storage: {
-    kind: 'local',
+    kind: 'github',
+    repo: {
+      owner: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER!,
+      name: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_SLUG!,
+    },
   },
   collections: {
     generations: collection({
